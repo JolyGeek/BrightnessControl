@@ -1,0 +1,18 @@
+# .NET / Visual Studio build output
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+
+# Local SDK, package caches, and generated publish binaries
+.appdata/
+.dotnet/
+.nuget/
+publish/
+
+# Logs and temporary files
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
