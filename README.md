@@ -1,37 +1,37 @@
 # Brightness Control
 
-Небольшое приложение для управления яркостью мониторов из системного трея Windows. Проект написан на C# и WPF.
+A small application for controlling monitor brightness from the Windows system tray. The project is written in C# and WPF.
 
-**Бесплатно для личного и иного некоммерческого использования. Коммерческое использование, продажа и распространение за плату запрещены.** Условия — в файле [LICENSE](LICENSE). Эта лицензия ограничивает коммерческое использование, поэтому проект не является open source в общепринятом смысле, хотя исходный код доступен публично.
+**Free for personal and other non-commercial use. Commercial use, sale, and paid redistribution are prohibited.** See the [LICENSE](LICENSE) file for the terms. Because this license restricts commercial use, the project is not open source in the generally accepted sense, although its source code is publicly available.
 
-## Возможности
+## Features
 
-- Управление яркостью внешних мониторов через DDC/CI.
-- Управление яркостью совместимых встроенных дисплеев через WMI.
-- Несколько мониторов, светлая и тёмная темы, значок в системном трее.
-- Переключатель запуска вместе с Windows.
+- Controls external monitors via DDC/CI.
+- Controls compatible built-in displays via WMI.
+- Supports multiple monitors, light and dark themes, and a system tray icon.
+- Includes an option to launch with Windows.
 
-Поддержка зависит от монитора, видеокабеля/док-станции и настроек DDC/CI в меню монитора. Некоторое оборудование не позволяет менять яркость программно.
+Support depends on the monitor, video cable or dock, and the DDC/CI setting in the monitor’s menu. Some hardware does not allow software brightness control.
 
-## Скачать
+## Download
 
-Откройте раздел [Releases](../../releases) и скачайте `BrightnessControl.exe` из последнего выпуска. Это автономная сборка для Windows x64 с включённым .NET runtime. При первом запуске Windows может показать предупреждение для скачанного приложения: сборка не подписана сертификатом издателя.
+Open [Releases](../../releases) and download the latest `BrightnessControl.exe`. It is a self-contained Windows x64 build with the .NET runtime included. Windows may show a warning the first time you run it because the build is not signed with a publisher certificate.
 
-## Собрать из исходников
+## Build from source
 
-Нужны Windows и .NET 8 SDK. В PowerShell из корня репозитория:
+You need Windows and the .NET 8 SDK. In PowerShell, from the repository root, run:
 
 ```powershell
 dotnet restore .\BrightnessControl.sln
 dotnet publish .\BrightnessControl.App\BrightnessControl.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:Platform=x64 -o .\publish\win-x64
 ```
 
-Полученный exe появится в `publish\win-x64`. Эта папка исключена из Git; готовые бинарные файлы прикладываются к GitHub Release, а не коммитятся в репозиторий.
+The resulting executable will be in `publish\win-x64`. This folder is excluded from Git; ready-to-use binaries are attached to GitHub Releases instead of being committed to the repository.
 
-## Обратная связь
+## Feedback
 
-Сообщайте об ошибках и несовместимом оборудовании через [Issues](../../issues). По вопросам коммерческой лицензии напишите владельцу репозитория.
+Report bugs and hardware compatibility issues through [Issues](../../issues). For commercial licensing inquiries, contact the repository owner.
 
-## Лицензия
+## License
 
-Исходный код можно бесплатно использовать, изучать, изменять и распространять только на условиях некоммерческой лицензии в файле [LICENSE](LICENSE). Коммерческое использование требует отдельного письменного разрешения правообладателя.
+The source code may be used, studied, modified, and redistributed for free only under the non-commercial license in the [LICENSE](LICENSE) file. Commercial use requires separate written permission from the copyright holder.
